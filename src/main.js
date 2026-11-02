@@ -134,3 +134,15 @@ document.querySelectorAll('#mobile-menu a').forEach((link) => {
       '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />'
   })
 })
+// Close the mobile menu when Escape is pressed
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    mobileMenu.classList.add('hidden')
+
+    menuButton.setAttribute('aria-expanded', 'false')
+    menuButton.setAttribute('aria-label', 'Open navigation menu')
+
+    menuIcon.innerHTML =
+      '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />'
+  }
+})
